@@ -8,13 +8,13 @@ export const createProduct = async (req, res) => {
             return res.status(403).json({ message: "Unauthorized" });
         }
 
-        const { title, description, category, price, image } = req.body;
+        const { title, description, category, price, image, stock } = req.body;
 
         // Check if all required fields are present and not empty
-        if (!title || !description || !category || !price || !image) {
+        if (!title || !description || !category || !price || !image || !stock) {
             return res.status(400).json({
                 message:
-                    "All fields (title, description, category, price, image) are required.",
+                    "All fields (title, description, category, price, image, stock) are required.",
             });
         }
 
@@ -24,6 +24,7 @@ export const createProduct = async (req, res) => {
             category,
             price,
             image,
+            stock,
         });
 
         res.status(201).json({

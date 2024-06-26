@@ -11,6 +11,11 @@ const schema = new mongoose.Schema({
     required: true,
   },
 
+  stock: {
+    type: Number,
+    required: true,
+  },
+
   price: {
     type: Number,
     required: true,
@@ -19,6 +24,11 @@ const schema = new mongoose.Schema({
   image: {
     type: String,
     required: true,
+  },
+
+  sold: {
+    type: Number,
+    default: 0,
   },
 
   category: {
